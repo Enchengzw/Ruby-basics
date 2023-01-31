@@ -1,13 +1,15 @@
+require 'pry-byebug'
+
+
 def bubble_sort (array)
   for iterations in 0..((array.length) -1)
     array.each_with_index do |number, index|
-      if index < array.length
+      unless index == ((array.length)-1)
         if number > array[index+1]
           a = number
           b = array[index+1]
           array[index] = b
           array[index+1] = a
-          print array
         end
       end
     end
@@ -15,5 +17,4 @@ def bubble_sort (array)
 array
 end
 
-bubble_sort([4,3,2])
-#bubble_sort([4,3,78,2,0,2])
+puts bubble_sort([4,3,78,2,0,2])
